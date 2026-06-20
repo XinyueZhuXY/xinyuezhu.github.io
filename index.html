@@ -59,7 +59,7 @@
       top: 0;
       left: 50%;
       transform: translateX(-50%);
-      max-width: 1100px;
+      max-width: 1150px;
       width: 100%;
       background: #fff;
       border-bottom: 1px solid #eaeaea;
@@ -76,7 +76,7 @@
     }
     
     nav a {
-      font-size: 0.95rem;
+      font-size: 0.98rem;
       color: #666;
       text-decoration: none;
       font-weight: 400;
@@ -90,13 +90,13 @@
     
     nav .separator {
       color: #666;
-      font-size: 0.95rem;
+      font-size: 0.98rem;
       margin: 0 4px;
     }
 
     /* ========== PAGE CONTAINER ========== */
     .container {
-      max-width: 1100px;
+      max-width: 1150px;
       width: 100%;
       margin: 0 auto;
       padding: 20px;
@@ -138,15 +138,24 @@
       font-weight: 600;
       margin-bottom: 0.25rem;
     }
+
+    .header .text .name a {
+      color: #000;
+      text-decoration: none;
+    }
+
+    .header .text .name a:hover {
+      text-decoration: underline;
+    }
     
     .header .text .subtitle {
-      font-size: 0.95rem;
+      font-size: 0.98rem;
       color: #000;
     }
     
     .header .text .bio {
       margin-top: 16px;
-      font-size: 0.95rem;
+      font-size: 0.98rem;
     }
 
     /* ========== SOCIAL ICONS ========== */
@@ -155,14 +164,14 @@
     }
 
     .social a {
-      font-size: 0.95rem;
+      font-size: 0.98rem;
       color: #2e5cb8;
       vertical-align: middle;
     }
 
     .social .separator {
       color: #000;
-      font-size: 0.95rem;
+      font-size: 0.98rem;
       margin: 0 4px;
     }
 
@@ -206,7 +215,11 @@
     
     ul.updates li {
       margin-bottom: 3px;
-      font-size: 0.95rem;
+      font-size: 0.98rem;
+    }
+
+    ul.updates li::marker {
+      font-size: 1.02em;
     }
 
     /* ========== PUBLICATIONS STYLING ========== */
@@ -223,7 +236,7 @@
     /* Authors styling - make dark grey */
     .publication .authors {
       margin: 0 0;
-      font-size: 0.95rem;
+      font-size: 0.98rem;
       color: #000;
     }
 
@@ -241,37 +254,54 @@
     .publication .venue {
       margin: 0 0 0px;
       font-style: italic;
-      font-size: 0.95rem;
+      font-size: 0.98rem;
       color: #000;
     }
 
-    /* Simple link list styling */
+    /* Publication action buttons */
     .publication .link-list {
-      margin: 0;
-      font-size: 0.95rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 6px;
+      margin: 6px 0 0;
+      font-size: 0.86rem;
     }
 
     .publication .link-list a {
-      color: #000;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 28px;
+      padding: 5px 10px;
+      border: 1px solid #d8e2f5;
+      border-radius: 6px;
+      background: #f7faff;
+      color: #1f4f9c;
+      font-weight: 500;
+      line-height: 1;
       text-decoration: none;
+      text-transform: capitalize;
+      transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
     }
 
-    .publication .link-list a:hover {
-      text-decoration: underline;
+    .publication .link-list a:hover,
+    .publication .link-list a:focus-visible {
+      background: #2e5cb8;
+      border-color: #2e5cb8;
+      color: #fff;
+      text-decoration: none;
+      transform: translateY(-1px);
+      outline: none;
     }
 
-    /* Style for dot separators that won't be underlined */
+    .publication .link-list a:focus-visible {
+      box-shadow: 0 0 0 3px rgba(46, 92, 184, 0.18);
+    }
+
+    /* Hide legacy dot separators now that links are buttons */
     .publication .link-list .dot {
-      color: #000;
-      margin: 0 0.3rem;
-    }
-
-    /* Publication description - make dark grey */
-    .pub-desc {
-      margin: 0.95rem 0 0;
-      color: #777;
-      font-size: 0.95rem;
-      line-height: 1.35;
+      display: none;
     }
 
     /* Badge/venue info paragraphs - make dark grey */
@@ -326,13 +356,13 @@
     .email-line {
       text-align: center;
       margin-top: 16px;
-      font-size: 0.95rem;
+      font-size: 0.98rem;
     }
     
     .footer-note {
       text-align: center;
       color: #aaa;
-      font-size: 0.95rem;
+      font-size: 0.98rem;
       margin-top: 8px;
     }
 
@@ -375,6 +405,10 @@
       .featured-publication > div:first-child {
         flex: none;
       }
+
+      .publication .link-list {
+        gap: 6px;
+      }
       
       /* Reduce spacing on mobile for better use of space */
       .section {
@@ -392,7 +426,7 @@
       }
       
       nav a {
-        font-size: 0.95rem;
+        font-size: 0.98rem;
       }
       
       .container {
@@ -430,16 +464,21 @@
         <img src="images/profile.jpg" alt="profile photo">
       </div>
       <div class="text">
-        <p class="name">Xinyue Zhu</p>
+        <p class="name"><a href="https://xinyuezhu.com/">Xinyue Zhu</a></p>
         <p class="subtitle">Email: xz3013 [at] columbia [dot] edu</p>
-        <p class="bio">
-          <p>I'm an undergraduate student at Columbia University. At Columbia, I am fortunate to work with Prof. <a href="https://yunzhuli.github.io/">Yunzhu Li</a> and Prof. <a href="https://www.me.columbia.edu/faculty/matei-ciocarlie">Matei Ciocarlie</a>.</p>
+        <div class="bio">
+          <p>
+          I am an incoming Ph.D. in Computer Science at <a href="https://bair.berkeley.edu/">Berkeley AI Research (BAIR)</a> lab, advised by <a href="https://goldberg.berkeley.edu/">Prof. Ken Goldberg</a>. 
+          I am also a research intern at <a href="https://scenix.ai/">SceniX</a>. 
+          My research is supported by the <a href="https://nsfgrfp.org/">NSF Graduate Research Fellowship (GRFP)</a>. 
+          Previously, I received my B.S. in Computer Science from Columbia University, where I worked with <a href="https://yunzhuli.github.io/">Prof. Yunzhu Li</a> and <a href="https://www.me.columbia.edu/faculty/matei-ciocarlie">Prof. Matei Ciocarlie</a>.
+          </p>
           
           <p style="margin-top: 0.95rem;">
-            My research interest is in robot learning. <em> I'm broadly interested in developing structured and scalable learning methods that enable robots to understand and interact reliably with the physical world.</em>
+            My research focuses on robot learning and robot manipulation.
           </p>
 
-        </p>
+        </div>
 
         <div class="social">
           <a href="https://github.com/YolandaXinyueZhu" aria-label="GitHub">GitHub</a>
@@ -456,11 +495,10 @@
       <h2 class="section-title updates-title" id="updates">Updates</h2>
       <div class="section">
         <ul class="updates">
-          <li>[Apr 2026]: I was awarded the <a href="https://nsfgrfp.org/" target="_blank">NSF GRFP Fellowship</a>! 🎉</li>
-          <li>[Nov 2025]: I started my internship as a Robotics Developer at <a href="https://scenix.ai/" target="_blank">Scenix</a>!</li>
-          <li>[Sep 2025]: Our paper <a href="https://binghao-huang.github.io/touch_in_the_wild/" target="_blank">Touch in the wild</a> is accepted to NeurIPS!</li>
-          <li>[Aug 2025]: Our paper <a href="https://jxu.ai/geotact/" target="_blank">GEOTACT</a> is accepted to Autonomous Robots Journal!</li>
-          <li>[May 2025]: Graduated with my Bachelor's Degree in Computer Science at Columbia. 🎉</li>
+          <li><strong>Apr 2026:</strong> I was awarded the <a href="https://nsfgrfp.org/" target="_blank">NSF GRFP Fellowship</a>! 🎊</li>
+          <li><strong>Nov 2025:</strong> I started my internship as a Robotics Researcher at <a href="https://scenix.ai/" target="_blank">SceniX</a>!</li>
+          <li><strong>Sep 2025:</strong> Our paper <a href="https://binghao-huang.github.io/touch_in_the_wild/" target="_blank">Touch in the Wild</a> is accepted to NeurIPS!</li>
+          <li><strong>May 2025:</strong> Graduated with my Bachelor's Degree in Computer Science at Columbia. 🎉</li>
         </ul>
       </div>
 
@@ -477,8 +515,8 @@
           </div>
           <div>
             <a href="https://binghao-huang.github.io/touch_in_the_wild/" class="title" target="_blank">Touch in the Wild: Learning Fine-Grained Manipulation with a Portable Visuo-Tactile Gripper</a>
-            <p class="authors"><strong>Xinyue Zhu*</strong>, <a href="https://binghao-huang.github.io/" target="_blank">Binghao Huang*</a>, <a href="https://yunzhuli.github.io/" target="_blank">Yunzhu Li</a></p>
-            <p style="font-size: 0.95rem; margin: 0;">
+            <p class="authors"><strong>Xinyue Zhu*</strong>, Binghao Huang*, Yunzhu Li</p>
+            <p style="font-size: 0.98rem; margin: 0;">
               <span class="badge">Best Demo Award</span>at <strong>RSS 2025</strong> Workshop on Robot Hardware-Aware Intelligence
               <a href="https://rss-hardware-intelligence.github.io/" target="_blank">[Link]</a>
             </p>
@@ -486,12 +524,30 @@
             <p class="link-list">
               <a href="https://binghao-huang.github.io/touch_in_the_wild/">website</a><span class="dot">•</span><a href="https://arxiv.org/abs/2507.15062">paper</a><span class="dot">•</span><a href="https://github.com/YolandaXinyueZhu/touch_in_the_wild">code</a>
             </p>
-            <p class="pub-desc">Developed a portable visuo-tactile gripper and a 2.6M-sample in-the-wild dataset for fine-grained manipulation.</p>
           </div>
         </div>
       </div>
 
-      <!-- Publication 2: ReactEMG -->
+      <!-- Publication 2: ReactEMG Stroke -->
+      <div class="section">
+        <div class="publication featured-publication">
+          <div style="flex:0 0 27%;">
+            <video width="100%" muted autoplay playsinline preload="metadata" loop style="border-radius:10px; max-height:250px;">
+              <source src="videos/reactemg_stroke.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div>
+            <a href="#" class="title">ReactEMG Stroke: Healthy-to-Stroke Few-shot Adaptation for sEMG-Based Intent Detection</a>
+            <p class="authors">Runsheng Wang, Katelyn Lee, <strong>Xinyue Zhu</strong>, Lauren Winterbottom, Dawn M. Nilsen<sup>*</sup>, Joel Stein<sup>*</sup>, and Matei Ciocarlie<sup>*</sup></p>
+            <p class="venue">IEEE RAS/EMBS International Conference on Biomedical Robotics and Biomechatronics (BioRob), 2026</p>
+            <p class="link-list">
+              <a href="https://roamlab.github.io/reactemg-stroke/" target="_blank">website</a><span class="dot">•</span><a href="https://arxiv.org/abs/2601.22090" target="_blank">paper</a><span class="dot">•</span><a href="https://github.com/roamlab/reactemg_stroke" target="_blank">code</a>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Publication 3: ReactEMG -->
       <div class="section">
         <div class="publication featured-publication">
           <div style="flex:0 0 27%;">
@@ -499,17 +555,16 @@
           </div>
           <div>
             <a href="https://reactemg.github.io" class="title" target="_blank">ReactEMG: Zero-Shot, Low-Latency Intent Detection via sEMG</a>
-            <p class="authors"><a href="https://www.runshengwang.com/" target="_blank">Runsheng Wang*</a>, <a href="https://github.com/YolandaXinyueZhu" target="_blank"><strong>Xinyue Zhu*</strong></a>, <a href="https://avachen.net/" target="_blank">Ava Chen</a>, <a href="https://jxu.ai/" target="_blank">Jingxi Xu</a>, <a href="https://reactemg.github.io" target="_blank">Lauren Winterbottom</a>, <a href="https://reactemg.github.io" target="_blank">Dawn M. Nilsen</a>, <a href="https://reactemg.github.io" target="_blank">Joel Stein</a>, <a href="https://www.me.columbia.edu/faculty/matei-ciocarlie" target="_blank">Matei Ciocarlie</a></p>
-            <p class="venue">Under Review, 2025</p>
+            <p class="authors">Runsheng Wang*, <strong>Xinyue Zhu*</strong>, Ava Chen, Jingxi Xu, Lauren Winterbottom, Dawn M. Nilsen, Joel Stein, Matei Ciocarlie</p>
+            <p class="venue">arXiv preprint, 2025</p>
             <p class="link-list">
               <a href="https://reactemg.github.io" target="_blank">website</a><span class="dot">•</span><a href="https://arxiv.org/abs/2506.19815" target="_blank">paper</a><span class="dot">•</span><a href="https://github.com/roamlab/reactemg" target="_blank">code</a>
             </p>
-            <p class="pub-desc"> Developed a masked-modeling transformer for fast, zero-shot intent detection in wearable orthosis control.</p>
           </div>
         </div>
       </div>
 
-      <!-- Publication 3: Tactile-based Object Retrieval -->
+      <!-- Publication 4: Tactile-based Object Retrieval -->
       <div class="section">
         <div class="publication featured-publication">
           <div style="flex:0 0 27%;">
@@ -519,17 +574,16 @@
           </div>
           <div>
             <a href="#" class="title">Tactile-based Object Retrieval from Granular Media</a>
-            <p class="authors"><a href="https://jxu.ai/" target="_blank">Jingxi Xu*</a>, <a href="https://yjia.net/" target="_blank">Yinsen Jia*</a>, <a href="https://jxu.ai/geotact/" target="_blank">Dongxiao Yang*</a>, <a href="https://pracsys.cs.rutgers.edu/members/patrick-meng/" target="_blank">Patrick Meng</a>, <a href="https://github.com/YolandaXinyueZhu" target="_blank"><strong>Xinyue Zhu</strong></a>, <a href="" target="_blank">Zihan Guo</a>, <a href="https://shurans.github.io/" target="_blank">Shuran Song</a>, <a href="https://www.me.columbia.edu/faculty/matei-ciocarlie" target="_blank">Matei Ciocarlie</a></p>
+            <p class="authors">Jingxi Xu*, Yinsen Jia*, Dongxiao Yang*, Patrick Meng, <strong>Xinyue Zhu</strong>, Zihan Guo, Shuran Song, Matei Ciocarlie</p>
             <p class="venue">Autonomous Robots Journal, 2025</p>
             <p class="link-list">
               <a href="https://jxu.ai/geotact/" target="_blank">website</a><span class="dot">•</span><a href="https://arxiv.org/abs/2402.04536" target="_blank">paper</a><span class="dot">•</span><a href="https://www.youtube.com/watch?si=PzvTh9DCk312T43v&v=MkaITIAZQEk&feature=youtu.be" target="_blank">video</a>
             </p>
-            <p class="pub-desc">Trained end-to-end RL policies with high-fidelity tactile feedback to retrieve objects buried in granular media.</p>
           </div>
         </div>
       </div>
 
-      <!-- Publication 4: DisRNN -->
+      <!-- Publication 5: DisRNN -->
       <div class="section">
         <div class="publication featured-publication">
           <div style="flex:0 0 27%;">
@@ -537,41 +591,16 @@
           </div>
           <div>
             <a href="#" class="title">Disentangling Interpretable Cognitive Variables That Support Human Generalization via DisRNN</a>
-            <p class="authors"><a href="https://jxu.ai/" target="_blank"><strong>Xinyue Zhu</strong></a>, <a href="https://www.danielkimmelmdphd.com/" target="_blank">Daniel Kimmel</a></p>
-            <p style="font-size: 0.95rem; margin: 0;">
-              Workshop on Interpreting Cognition in Deep Learning Models, NeurIPS 2025
-              <a href="https://coginterp.github.io/neurips2025/" target="_blank">[Link]</a>
-            </p>
-            <p class="venue">Under Review, 2025</p>
+            <p class="authors"><strong>Xinyue Zhu</strong>, Daniel Kimmel</p>
+            <p class="venue">Workshop on Interpreting Cognition in Deep Learning Models, NeurIPS 2025</p>
             <p class="link-list">
               <a href="data/disrnn_camera_ready.pdf" target="_blank">paper</a>
             </p>
-            <p class="pub-desc">Uncovered interpretable dynamics underlying human generalization via an RNN with sparse latent representations.</p>
           </div>
         </div>
       </div>
 
-      <!-- Publication 5: ChatEMG -->
-      <div class="section">
-        <div class="publication featured-publication">
-          <div style="flex:0 0 27%;">
-            <video width="100%" muted autoplay loop playsinline preload="metadata" style="border-radius:10px; max-height:250px;">
-              <source src="videos/chatemg.mp4" type="video/mp4">
-            </video>
-          </div>
-          <div>
-            <a href="#" class="title">ChatEMG: Synthetic Data Generation to Control a Robotic Hand Orthosis for Stroke</a>
-            <p class="authors"><a href="https://jxu.ai/" target="_blank">Jingxi Xu*</a>, <a href="https://www.runshengwang.com/" target="_blank">Runsheng Wang*</a>, <a href="https://scholar.google.com/citations?user=l_B2GBMAAAAJ&hl=en" target="_blank">Siqi Shang*</a>, <a href="https://avachen.net/" target="_blank">Ava Chen</a>, <a href="https://yjia.net/" target="_blank">Lauren Winterbottom</a>, <a href="" target="_blank">To-Liang Hsu</a>, <a href="" target="_blank">Wenxi Chen</a>, <a href="" target="_blank">Khondoker Ahmed</a>, <a href="" target="_blank">Pedro Leandro La Rotta</a>, <a href="" target="_blank"><strong>Xinyue Zhu</strong></a>, <a href="" target="_blank">Dawn M. Nilsen</a>, <a href="" target="_blank">Joel Stein</a>, <a href="https://www.me.columbia.edu/faculty/matei-ciocarlie" target="_blank">Matei Ciocarlie</a></p>
-            <p class="venue">IEEE Robotics and Automation Letters(RA-L), 2025</p>
-            <p class="link-list">
-              <a href="https://jxu.ai/chatemg/" target="_blank">website</a><span class="dot">•</span><a href="https://arxiv.org/abs/2406.12123" target="_blank">paper</a><span class="dot">•</span><a href="https://github.com/jingxixu/chatemg" target="_blank">video</a>
-            </p>
-            <p class="pub-desc">Generated synthetic EMG to improve intent detection for wearable robotics control.</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Publication 7: Knolling Bot -->
+      <!-- Publication 6: Knolling Bot -->
       <div class="section">
         <div class="publication featured-publication">
           <div style="flex:0 0 27%;">
@@ -582,24 +611,23 @@
           <div>
             <a href="#" class="title">Knolling Bot: Learning Robotic Object Arrangement from Tidy Demonstrations</a>
             <p class="authors">
-              <a href="https://yuhang-hu.com/" target="_blank">Yuhang Hu</a>,
-              <a href="" target="_blank">Zhizhuo Zhang</a>,
-              <a href="" target="_blank"><strong>Xinyue Zhu</strong></a>,
-              <a href="" target="_blank">Ruibo Liu</a>,
-              <a href="https://www.philippewyder.com/" target="_blank">Philippe Wyder</a>,
-              <a href="https://www.hodlipson.com/" target="_blank">Hod Lipson</a>
+              Yuhang Hu,
+              Zhizhuo Zhang,
+              <strong>Xinyue Zhu</strong>,
+              Ruibo Liu,
+              Philippe Wyder,
+              Hod Lipson
             </p>
             <p class="venue">Conference on Neural Information Processing Systems (NeurIPS), Creative AI Track, 2025</p>
             <p class="link-list">
               <a href="https://github.com/H-Y-H-Y-H/knolling_bot" target="_blank">website</a><span class="dot">•</span><a href="https://arxiv.org/abs/2310.04566" target="_blank">paper</a><span class="dot">•</span><a href="https://github.com/H-Y-H-Y-H/knolling_bot" target="_blank">code</a>
             </p>
-            <p class="pub-desc">Learned tidiness from demonstrations to arrange objects into orderly layouts.</p>
           </div>
         </div>
       </div>
       
 
-      <!-- Publication 6: GRID -->
+      <!-- Publication 7: GRID -->
       <div class="section">
         <div class="publication featured-publication">
           <div style="flex:0 0 27%;">
@@ -609,12 +637,11 @@
           </div>
           <div>
             <a href="#" class="title">GRID: Scene-Graph-based Instruction-driven Robotic Task Planning</a>
-            <p class="authors"><a href="https://jackyzengl.github.io/GRID.github.io/" target="_blank">Zhe Ni*</a>, <a href="https://jackyzengl.github.io/GRID.github.io/" target="_blank">Xiaoxin Deng*</a>, <a href="https://jackyzengl.github.io/GRID.github.io/" target="_blank">Cong Tai*</a>, <a href="https://github.com/YolandaXinyueZhu" target="_blank"><strong>Xinyue Zhu</strong></a>, <a href="https://jackyzengl.github.io/GRID.github.io/" target="_blank">Qinghongbing Xie</a>, <a href="https://jackyzengl.github.io/GRID.github.io/" target="_blank">Weihang Huang</a>, <a href="https://jackyzengl.github.io/GRID.github.io/" target="_blank">Xiang Wu</a>, <a href="https://jackyzengl.github.io/GRID.github.io/" target="_blank">Long Zeng</a></p>
+            <p class="authors">Zhe Ni*, Xiaoxin Deng*, Cong Tai*, <strong>Xinyue Zhu</strong>, Qinghongbing Xie, Weihang Huang, Xiang Wu, Long Zeng</p>
             <p class="venue">International Conference on Intelligent Robots and Systems (IROS), 2024</p>
             <p class="link-list">
               <a href="https://jackyzengl.github.io/GRID.github.io/" target="_blank">website</a><span class="dot">•</span><a href="https://arxiv.org/abs/2309.07726" target="_blank">paper</a><span class="dot">•</span><a href="https://github.com/jackyzengl/GRID" target="_blank">code</a>
             </p>
-            <p class="pub-desc">Used scene graphs and LLMs to plan sub-tasks from instructions across diverse scenes.</p>
           </div>
         </div>
       </div>
@@ -627,12 +654,11 @@
           </div>
           <div>
             <a href="#" class="title">Uniquely Completable And Critical Subsets of the Integer Addition Table</a>
-            <p class="authors"><a href="" target="_blank">Aurora Callahan*</a>, <a href="" target="_blank">Emma R Hasson*</a>, <a href="" target="_blank">Kaethe Minden*</a>, <a href="" target="_blank">MA Ollis*</a>, <a href="" target="_blank"><strong>Xinyue Zhu*</strong></a></p>
+            <p class="authors">Aurora Callahan*, Emma R Hasson*, Kaethe Minden*, MA Ollis*, <strong>Xinyue Zhu*</strong></p>
             <p class="venue">Australasian Journal of Combinatorics, 2023</p>
             <p class="link-list">
               <a href="https://ajc.maths.uq.edu.au/pdf/89/ajc_v89_p137.pdf" target="_blank">paper</a>
             </p>
-            <p class="pub-desc">Defined and analyzed mathematical properties of the infinite Latin square.</p>
           </div>
         </div>
       </div>
